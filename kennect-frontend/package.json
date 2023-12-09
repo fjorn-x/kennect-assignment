@@ -17,7 +17,7 @@
     "npm": "^10.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^9.0.2",
+    "react-redux": "^7.2.1",
     "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
@@ -49,5 +49,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.6"
-  }
+  },
+  "proxy": "http://node-api:3000/"
 }

@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(errorHandler);
 app.use(express.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://localhost:27017/kennect");
+mongoose.connect("mongodb://mongo-db/kennect");
 const db = mongoose.connection;
 db.on("connected", () => {
   console.log(`Database connected: ${db.host}`.cyan.underline);
