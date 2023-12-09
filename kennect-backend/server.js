@@ -19,10 +19,10 @@ app.use(express.json());
 app.use(errorHandler);
 app.use(express.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://mongo-db/kennect");
+mongoose.connect("mongodb://localhost:27017/kennect");
 const db = mongoose.connection;
 db.on("connected", () => {
-  console.log(`Database connected: ${db.host}`.cyan.underline);
+  console.log(`Database connected: ${db.host}`);
 });
 db.on("error", (err) => {
   console.log(`Database err ${err}`);
@@ -30,8 +30,7 @@ db.on("error", (err) => {
 db.on("disconnected", () => {
   console.log("Database disconnected");
 });
-const port = process.env.PORT || 3001;
-
+const port = process.env.PORT || 3001
 app.use("/api/posts", postRoutes);
 app.use("/auth", userRoutes);
 
